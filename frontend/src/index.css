@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #root {
+    min-height: 100%;
+    background-color: #15171A;
+    color: #F4F2ED;
+    font-family: "Inter", sans-serif;
+  }
+
+  * {
+    border-color: #2A2D31;
+  }
+
+  ::selection {
+    background-color: #FF5A1F;
+    color: #15171A;
+  }
+
+  input,
+  textarea,
+  select {
+    font-family: "Inter", sans-serif;
+  }
+
+  canvas {
+    display: block;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-accent text-charcoal font-semibold text-sm rounded-btn px-4 py-2.5 transition-colors hover:bg-[#ff733d] disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border border-border text-text-primary font-semibold text-sm rounded-btn px-4 py-2.5 transition-colors hover:bg-surface hover:border-accent disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .input-field {
+    @apply w-full bg-charcoal border border-border text-text-primary text-sm rounded-btn px-3 py-2.5 outline-none transition-colors placeholder:text-text-secondary focus:border-accent focus:ring-1 focus:ring-accent;
+  }
+
+  .label-field {
+    @apply mb-1 block text-xs font-medium text-text-secondary;
+  }
+
+  .card {
+    @apply bg-surface border border-border rounded-card p-5;
+  }
+
+  .stat-number-huge {
+    @apply font-scoreboard font-bold text-stat-huge;
+  }
+
+  .stat-number-large {
+    @apply font-scoreboard font-bold text-stat-large;
+  }
+
+  .stat-number-medium {
+    @apply font-scoreboard font-bold text-stat-medium;
+  }
+}
+
+@layer utilities {
+  .transform-gpu {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: transform;
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .animate-bar-up {
+    animation: barUp 400ms ease-out forwards;
+  }
+
+  @keyframes barUp {
+    from {
+      transform: scaleY(0);
+      transform-origin: bottom;
+    }
+    to {
+      transform: scaleY(1);
+      transform-origin: bottom;
+    }
+  }
+}
