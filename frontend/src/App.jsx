@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Navbar from "./components/Navbar";
@@ -12,7 +12,7 @@ import Profile from "./pages/Profile";
 
 const App = () => (
   <AuthProvider>
-    <BrowserRouter>
+    <HashRouter>
       <div className="min-h-screen bg-charcoal text-text-primary">
         <Navbar />
         <main>
@@ -57,7 +57,7 @@ const App = () => (
           </PageTransition>
         </main>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   </AuthProvider>
 );
 
